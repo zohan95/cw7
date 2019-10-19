@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container card-1 mt-5">
+        <h4>Вопрос: {{ poll.question }}</h4>
+        <hr/>
+        <ul>
+            {% with var=0 %}
+                {% for i in count_list %}
+                    <li>{{ i }}</li>
+                {% endfor %}
+            {% endwith %}
+        </ul>
+    </div>
+{% endblock %}
+

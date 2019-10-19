@@ -27,5 +27,6 @@ urlpatterns = [
     path('poll/<int:pk>/create/', ChoiceCreate.as_view(), name='choice_create_url'),
     path('choice/edit/<int:pk>/', ChoiceEdit.as_view(), name='choice_edit_url'),
     path('choice/delete/<int:pk>/', ChoiceDelete.as_view(), name='choice_delete_url'),
-    path('answer/<int:pk>/', AnswerView.as_view(), name='answer_view')
+    path('answer/<int:pk>/', AnswerView.as_view(), name='answer_view'),
+    path('stat/<int:pk>/', StatView.as_view(), name='stat_url')
 ]

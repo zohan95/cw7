@@ -11,8 +11,7 @@ class AnswerView(View):
         return render(request, 'Answer/index.html', {'poll': poll, 'variab': variab})
 
     def post(self, request, pk):
-        choice = Choice.objects.get(pk = request.POST.get('answer_radio'))
+        choice = Choice.objects.get(pk=request.POST.get('answer_radio'))
         poll = Poll.objects.get(pk=pk)
         Answer.objects.create(poll=poll, variation=choice).save()
         return redirect('poll_url')
-

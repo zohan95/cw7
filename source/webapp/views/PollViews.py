@@ -12,11 +12,10 @@ class PollView(ListView):
     ordering = ['-created_at']
 
 
-
-
 class PollDetails(DetailView):
     template_name = 'Poll/details.html'
     model = Poll
+
     def get_context_data(self, **kwargs):
         poll = kwargs.get('object')
         print(poll)

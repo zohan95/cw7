@@ -10,7 +10,7 @@ from webapp.models import Poll, Choice
 class ChoiceCreate(View):
     def get(self, request, pk):
         form = ChoiceForm()
-        return render(request, 'Choice/create.html', {'form': form,'pk':pk})
+        return render(request, 'Choice/create.html', {'form': form, 'pk': pk})
 
     def post(self, request, pk):
         bound_from = ChoiceForm(request.POST)
@@ -34,4 +34,3 @@ class ChoiceDelete(DeleteView):
     model = Choice
     template_name = "Choice/delete.html"
     success_url = reverse_lazy('poll_url')
-

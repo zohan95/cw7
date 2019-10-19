@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -25,7 +24,9 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('variation', models.TextField(max_length=200, verbose_name='Текст варианта')),
-                ('poll', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='poll', to='webapp.Poll', verbose_name='Вопрос')),
+                ('poll',
+                 models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='poll', to='webapp.Poll',
+                                   verbose_name='Вопрос')),
             ],
         ),
     ]

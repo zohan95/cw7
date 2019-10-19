@@ -10,11 +10,13 @@
                             <p class="card-text">{{ i.question }}</p>
                             <hr/>
                             <div class="text-center">
-                                    <a href="{% url 'answer_view' i.pk %}" class="btn btn-outline-info">Отв</a>
-                                <a href="{% url 'poll_details_url' i.pk %}" class="btn btn-primary">Дет.</a>
-                                <a href="{% url 'poll_edit_url' i.pk %}" class="btn btn-success">Изм.</a>
+                                <a href="{% url 'poll_details_url' i.pk %}" class="btn btn-primary">Детали</a>
+                                <a href="{% url 'poll_edit_url' i.pk %}" class="btn btn-success">Изменить</a>
                                 <a href="{% url 'poll_delete_url' i.pk %}" class="btn btn-danger">X</a>
-
+                            </div>
+                            <div class="text-center mt-1">
+                                <a href="{% url 'answer_view' i.pk %}" class="btn btn-outline-info">Ответить</a>
+                                <a href="{% url 'stat_url' i.pk %}" class="btn btn-outline-info">Статистика</a>
                             </div>
                         </div>
                     </div>

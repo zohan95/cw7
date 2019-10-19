@@ -4,19 +4,20 @@
     <div class="container mt-5 card-1">
 
         <h4>{{ poll.question }}</h4>
-    <hr/>
-    <form action="{% url 'answer_view' poll.pk %}" method="POST">
-    {% csrf_token %}
-        {% for i in variab.all %}
-            <div class="form-check">
-                <input class="form-check-input" name="answer_radio" type="radio" name="Radios" value="{{ i.pk }}" checked>
-                <label class="form-check-label" for="exampleRadios1">
-                    {{ i.variation }}
-                </label>
-            </div>
-        {% endfor %}
-    <button type="submit" class="btn btn-success mt-3">Ok</button>
-    </form>
+        <hr/>
+        <form action="{% url 'answer_view' poll.pk %}" method="POST">
+            {% csrf_token %}
+            {% for i in variab.all %}
+                <div class="form-check">
+                    <input class="form-check-input" name="answer_radio" type="radio" name="Radios" value="{{ i.pk }}"
+                           checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        {{ i.variation }}
+                    </label>
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success mt-3">Ok</button>
+        </form>
     </div>
 
 {% endblock %}

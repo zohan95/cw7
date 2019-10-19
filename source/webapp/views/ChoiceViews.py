@@ -19,7 +19,7 @@ class ChoiceCreate(View):
             choice.variation = bound_from.cleaned_data['variation']
             choice.poll = Poll.objects.get(pk=pk)
             choice.save()
-            return redirect('poll_url')
+            return redirect('poll_details_url', pk=pk)
         return render(request, 'Choice/create.html', context={'form': bound_from})
 
 

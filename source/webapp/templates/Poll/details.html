@@ -6,6 +6,9 @@
             <p class="card-title">Опрос:</p>
             <hr/>
             {{ poll.question }}
+            <div class="div mt-5">
+                <a href="{% url 'answer_view' poll.id %}" class="btn btn-outline-info">Ответить</a>
+            </div>
         </div>
         <h3 class="text-center my-3">Варианты ответов:</h3>
         <div class="choices">

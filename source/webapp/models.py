@@ -17,3 +17,12 @@ class Choice(models.Model):
         return self.variation[:20]
 
 
+class Answer(models.Model):
+    poll = models.ForeignKey('webapp.Poll', verbose_name='Опрос', related_name='poll_ans', on_delete=models.CASCADE)
+    variation = models.ForeignKey('webapp.Choice', verbose_name='Ответ', related_name='var_ans', on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.poll.question[:20]
+
+

@@ -23,5 +23,8 @@ urlpatterns = [
     path('poll/<int:pk>/', PollDetails.as_view(), name='poll_details_url'),
     path('poll/edit/<int:pk>/', PollEdit.as_view(), name='poll_edit_url'),
     path('poll/delete/<int:pk>/', PollDelete.as_view(), name='poll_delete_url'),
-    path('poll/create/', PollCreate.as_view(), name='poll_create_url')
+    path('poll/create/', PollCreate.as_view(), name='poll_create_url'),
+    path('poll/<int:pk>/create/', ChoiceCreate.as_view(), name='choice_create_url'),
+    path('choice/edit/<int:pk>/', ChoiceEdit.as_view(), name='choice_edit_url'),
+    path('choice/delete/<int:pk>/', ChoiceDelete.as_view(), name='choice_delete_url')
 ]

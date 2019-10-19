@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
-from .models import Poll
+from webapp.models import Poll, Choice
 
 
 class PollView(ListView):
@@ -12,9 +12,17 @@ class PollView(ListView):
     ordering = ['-created_at']
 
 
+
+
 class PollDetails(DetailView):
     template_name = 'Poll/details.html'
     model = Poll
+    def get_context_data(self, **kwargs):
+        poll = kwargs.get('object')
+        print(poll)
+        context = super().get_context_data(**kwargs)
+        context['choices'] = Choice.objects.filter(poll=poll)
+        return context
 
 
 class PollEdit(UpdateView):

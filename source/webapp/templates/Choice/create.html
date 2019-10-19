@@ -2,7 +2,7 @@
 {% block content %}
     <div class="container mt-5">
         <div class="card card-1">
-            <form action="{% url 'poll_create_url'%}" method="post">
+            <form action="{% url 'choice_create_url' pk=pk %}" method="post">
                 {% include 'partial/edit_form.html' with button_text='Создать' %}
             </form>
         </div>
